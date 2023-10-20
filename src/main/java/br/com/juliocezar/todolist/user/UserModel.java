@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,19 +12,18 @@ import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
-@Entity(name = "tb_user")
+@Entity(name = "tb_users")
 public class UserModel {
 
-   @Id
-   @GeneratedValue(generator = "UUID")
-   private UUID id;
+    @Id
+    @GeneratedValue(generator = "UIID")
+    private UUID id;
 
-   @Column(unique = true)
-   private String name;
-   private String email;
-   private String password;
+    @Column(unique = true)
+    private String username;
+    private String name;
+    private String password;
 
-   @CreationTimestamp
-   private LocalDateTime createdAt;
-
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 }
